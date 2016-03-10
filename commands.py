@@ -2,6 +2,7 @@
 
 import os
 import re
+import sys
 import tkFileDialog
 import tkSimpleDialog
 
@@ -31,7 +32,7 @@ def load_file(source, register, stdout):
 def execute_bf(source, register, stdout, step):
     step_ = int(step.get())
     if step_ is 0:
-        step_ = 8192
+        step_ = sys.maxint
 
     source.tag_remove(
         'SELECTED',
